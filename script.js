@@ -16,3 +16,5 @@ let i=p.get('Instagram');if(i)document.getElementById('instagram').textContent='
 let c=p.get('Contato');if(c)document.getElementById('contato').textContent=c;
 let x=p.get('Extras');if(x)document.getElementById('extras').textContent=x;
 let foto=p.get('Foto1');if(foto)document.getElementById('fotoAtleta').src=foto;
+
+document.getElementById('btnCompartilhar').addEventListener('click',()=>alert('Botão funcionando. Próximo passo: implementar PDF.'));
