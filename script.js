@@ -124,7 +124,7 @@ async function gerarPDF() {
 
         const nome = (p.get("Nome") || "Atleta").trim();
 
-        const elemento = document.querySelector(".pagina");
+        const elemento = document.querySelector(".pdf");
 
         const options = {
 
@@ -162,6 +162,7 @@ async function gerarPDF() {
                 format: "a4",
                 orientation: "portrait",
                 compress: true
+                
 
             }
 

@@ -6,8 +6,29 @@
 
 body{
 
-    background:#111;
+    margin:0;
+
+    background:#111111;
+
     font-family:Arial,Helvetica,sans-serif;
+
+}
+
+/* ========================= */
+/* CONTAINER PDF */
+/* ========================= */
+
+.pdf{
+
+    width:100%;
+
+    
+
+    background:#111111;
+
+    display:flex;
+
+    justify-content:center;
 
 }
 
@@ -46,9 +67,10 @@ body{
 .card{
 
     width:210mm;
-    min-height:297mm;
 
-    margin:20px auto;
+    min-height:250mm;
+
+    margin:0;
 
     background:#181818;
 
@@ -99,11 +121,11 @@ body{
 
     align-items:flex-start;
 
-    gap:28px;
+    gap:20px;
 
-    padding:35px;
+    padding:25px;
 
-    margin-top:-110px;
+    margin-top:-70px;
 
     position:relative;
 
@@ -115,7 +137,7 @@ body{
 
 .foto-atleta{
 
-    width:170px;
+    width:120px;
 
     aspect-ratio:2/3;
 
@@ -137,13 +159,13 @@ body{
 
     justify-content:flex-start;
 
-    margin-top:85px;
+    margin-top:60px;
 
 }
 
 #nome{
 
-    font-size:34px;
+    font-size:24px;
 
     color:#fff;
 
@@ -157,9 +179,9 @@ body{
 
     color:#cfcfcf;
 
-    font-size:18px;
+    font-size:13px;
 
-    margin-bottom:10px;
+    margin-bottom:5px;
 
 }
 
@@ -167,7 +189,7 @@ body{
 
     color:#ef7d1a;
 
-    font-size:22px;
+    font-size:16px;
 
     font-weight:bold;
 
@@ -179,7 +201,7 @@ body{
 
 .informacoes{
 
-    padding:0 35px;
+    padding:0 25px;
 
 }
 
@@ -191,7 +213,7 @@ body{
 
     align-items:center;
 
-    padding:15px 0;
+    padding:10px 0;
 
     border-bottom:1px solid rgba(255,255,255,.15);
 
@@ -201,7 +223,7 @@ body{
 
     color:#c8c8c8;
 
-    font-size:15px;
+    font-size:11px;
 
 }
 
@@ -209,7 +231,7 @@ body{
 
     color:#fff;
 
-    font-size:16px;
+    font-size:12px;
 
     text-align:right;
 
@@ -223,9 +245,9 @@ body{
 
 .extras{
 
-    margin-top:35px;
+    margin-top:20px;
 
-    padding:0 35px;
+    padding:0 25px;
 
 }
 
@@ -233,17 +255,19 @@ body{
 
     color:#ef7d1a;
 
-    font-size:22px;
+    font-size:16px;
 
-    margin-bottom:14px;
+    margin-bottom:10px;
 
 }
 
 #extras{
 
+    font-size:13px;
+
     color:#e5e5e5;
 
-    line-height:1.7;
+    line-height:1.5;
 
     text-align:justify;
 
@@ -255,9 +279,9 @@ body{
 
 .footer-rpp{
 
-    margin-top:auto;
+    margin-top:115px;
 
-    padding:35px;
+    padding:15px 25px;
 
     border-top:2px solid #ef7d1a;
 
@@ -267,15 +291,17 @@ body{
 
 .footer-logo{
 
-    width:140px;
+    width:100px;
 
-    margin:0 auto 14px;
+    margin:0 auto 10px;
 
     display:block;
 
 }
 
 .footer-rpp h3{
+
+    font-size:16px;
 
     color:#ef7d1a;
 
@@ -284,6 +310,8 @@ body{
 }
 
 .footer-rpp p{
+
+    font-size:12px;
 
     margin:4px 0;
 
@@ -305,9 +333,10 @@ body{
 
 @media print{
 
-    body{
+    body,
+    .pdf{
 
-        background:#181818;
+        background:#111111;
 
     }
 
