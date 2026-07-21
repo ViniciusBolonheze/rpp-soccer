@@ -1,66 +1,283 @@
-
-body{margin:0;background:#efefef;font-family:Arial,sans-serif}
-.card{max-width:820px;margin:30px auto;background:#fff;border-radius:14px;padding:24px;box-shadow:0 8px 25px rgba(0,0,0,.15)}
-header{text-align:center}
-.logo{max-width:320px;width:80%;margin-bottom:20px}
-.foto{width:220px;height:220px;object-fit:cover;border-radius:12px;border:5px solid #e46b00}
-h1{text-align:center;margin:15px 0 5px;color:#222}
-h2{text-align:center;color:#e46b00;margin:0 0 25px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.grid div{border-left:4px solid #e46b00;padding-left:10px}
-span{display:block;font-size:11px;color:#777}
-strong{font-size:15px;color:#222}
-.extras{margin-top:20px;border-top:2px solid #e46b00;padding-top:14px}
-#btnCompartilhar{position:fixed;top:15px;right:15px;padding:8px 14px;background:#e46b00;color:#fff;border:none;border-radius:6px;cursor:pointer;z-index:9999}
-
-
-/* V3 adjustments */
-.header img:first-child{display:none!important;}
-.profile,.foto-container,.photo-container,.athlete-photo{display:flex;justify-content:center;}
-.profile img,.foto-container img,.photo-container img,.athlete-photo img{
-display:block;
-margin:0 auto 15px auto!important;
-}
-.footer-rpp{
-margin-top:20px;
-padding:16px 0;
-text-align:center;
-border-top:2px solid #f07a00;
-}
-.footer-logo{
-width:120px;
-height:auto;
-display:block;
-margin:0 auto 10px;
-}
-.footer-rpp h3{
-margin:6px 0;
-color:#f07a00;
+body{
+    margin:0;
+    background:#efefef;
+    font-family:Arial,sans-serif;
 }
 
+/* ========================= */
+/* FOLHA */
+/* ========================= */
 
-header img.footer-logo{display:none!important;}
-header{display:flex;justify-content:center;align-items:center;margin-top:10px}
-.foto{width:220px;height:220px;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.18);}
-h1{font-size:1.7rem;font-weight:700;margin-top:18px}
-h2{font-size:0.9rem;color:#666;margin-bottom:24px}
-.grid{gap:12px}
+.card{
+    width:210mm;
+    min-height:297mm;
+
+    margin:20px auto;
+
+    background:#fff;
+
+    border-radius:14px;
+
+    padding:20px;
+
+    box-sizing:border-box;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+    display:flex;
+    flex-direction:column;
+}
+
+/* ========================= */
+/* CABEÇALHO */
+/* ========================= */
+
+header{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:8px;
+}
+
+header img.footer-logo{
+    display:none;
+}
+
+/* ========================= */
+/* FOTO */
+/* ========================= */
+
+.foto{
+
+    width:125px;
+    aspect-ratio:2/3;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    border:5px solid #e46b00;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+}
+
+/* ========================= */
+/* TÍTULOS */
+/* ========================= */
+
+h1{
+
+    text-align:center;
+
+    margin:14px 0 4px;
+
+    font-size:30px;
+
+    color:#222;
+
+}
+
+h2{
+
+    text-align:center;
+
+    margin:0 0 18px;
+
+    font-size:15px;
+
+    color:#666;
+
+}
+
+/* ========================= */
+/* GRID */
+/* ========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+
+}
+
 .grid div{
-background:#fafafa;
-border-left:5px solid #f07a00;
-padding:9px 11px;
-border-radius:8px;
-box-shadow:0 2px 6px rgba(0,0,0,.05);
+
+    background:#fafafa;
+
+    border-left:5px solid #f07a00;
+
+    border-radius:8px;
+
+    padding:8px 10px;
+
+    box-shadow:0 2px 6px rgba(0,0,0,.05);
+
 }
+
+span{
+
+    display:block;
+
+    font-size:11px;
+
+    color:#777;
+
+}
+
+strong{
+
+    font-size:15px;
+
+    color:#222;
+
+}
+
+/* ========================= */
+/* SOBRE */
+/* ========================= */
+
+.extras{
+
+    margin-top:16px;
+
+    border-top:2px solid #f07a00;
+
+    padding-top:12px;
+
+}
+
 .extras h3{
-color:#f07a00;
-border-bottom:2px solid #f07a00;
-padding-bottom:8px;
-margin-bottom:12px;
+
+    color:#f07a00;
+
+    margin-bottom:8px;
+
+    padding-bottom:6px;
+
+    border-bottom:2px solid #f07a00;
+
 }
+
+/* ========================= */
+/* BOTÃO */
+/* ========================= */
+
+#btnCompartilhar{
+
+    position:fixed;
+
+    top:15px;
+
+    right:15px;
+
+    padding:8px 14px;
+
+    background:#e46b00;
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+}
+
+/* ========================= */
+/* RODAPÉ */
+/* ========================= */
+
+.footer-rpp{
+
+    margin-top:auto;
+
+    padding-top:18px;
+
+    text-align:center;
+
+    border-top:2px solid #f07a00;
+
+}
+
+.footer-logo{
+
+    width:120px;
+
+    height:auto;
+
+    display:block;
+
+    margin:0 auto 8px;
+
+}
+
+.footer-rpp h3{
+
+    color:#f07a00;
+
+    margin:6px 0;
+
+}
+
+.footer-rpp p{
+
+    margin:3px 0;
+
+}
+
+/* ========================= */
+/* IMPRESSÃO */
+/* ========================= */
+
+@page{
+
+    size:A4;
+
+    margin:0;
+
+}
+
 @media print{
-#btnCompartilhar{display:none}
-body{background:#fff}
-.card{box-shadow:none;margin:0;max-width:100%;padding:12px}
-.footer-rpp{margin-top:20px}
+
+    body{
+
+        margin:0;
+
+        background:#fff;
+
+    }
+
+    #btnCompartilhar{
+
+        display:none;
+
+    }
+
+    .card{
+
+        width:210mm;
+
+        min-height:297mm;
+
+        margin:0;
+
+        padding:18px;
+
+        box-shadow:none;
+
+        border-radius:0;
+
+        page-break-inside:avoid;
+
+        break-inside:avoid;
+
+    }
+
 }
