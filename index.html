@@ -1,65 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RPP Soccer</title>
-<link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RPP Soccer</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
 <button id="btnCompartilhar">📤 Compartilhar</button>
 
-<div class="card container">
+<div class="pagina card">
 
-    <header>
+    <!-- TOPO -->
 
-        <img id="fotoAtleta" class="foto">
+    <header class="topo">
+
+        <img src="Logo Rpp.jpg" class="logo-topo" alt="RPP Soccer">
 
     </header>
 
-    <h1 id="nome"></h1>
+    <!-- CABEÇALHO -->
 
-    <h2 id="nascimento"></h2>
+    <section class="cabecalho">
 
-    <div class="grid">
+        <img id="fotoAtleta"
+             class="foto-atleta"
+             alt="Foto do atleta">
 
-        <div><span>Posição</span><strong id="posicao"></strong></div>
+        <div class="dados-principais">
 
-        <div><span>Cidade</span><strong id="cidade"></strong></div>
+            <h1 id="nome"></h1>
 
-        <div><span>Nacionalidade</span><strong id="nacionalidade"></strong></div>
+            <p id="nascimento"></p>
 
-        <div><span>Clube Atual</span><strong id="clubeAtual"></strong></div>
+            <p id="clubeAtual"></p>
 
-        <div><span>Clubes</span><strong id="clubesAntigos"></strong></div>
+        </div>
 
-        <div><span>Altura</span><strong id="altura"></strong></div>
+    </section>
 
-        <div><span>Peso</span><strong id="peso"></strong></div>
+    <!-- LISTA -->
 
-        <div><span>Perna</span><strong id="perna"></strong></div>
+    <section class="informacoes">
 
-        <div><span>Chuteira</span><strong id="chuteira"></strong></div>
+        <div class="linha">
+            <span>Posição</span>
+            <strong id="posicao"></strong>
+        </div>
 
-        <div><span>Instagram</span><strong id="instagram"></strong></div>
+        <div class="linha">
+            <span>Cidade</span>
+            <strong id="cidade"></strong>
+        </div>
 
-        <div><span>Contato</span><strong id="contato"></strong></div>
+        <div class="linha">
+            <span>Nacionalidade</span>
+            <strong id="nacionalidade"></strong>
+        </div>
 
-    </div>
+        <div class="linha">
+            <span>Clubes</span>
+            <strong id="clubesAntigos"></strong>
+        </div>
+
+        <div class="linha">
+            <span>Altura</span>
+            <strong id="altura"></strong>
+        </div>
+
+        <div class="linha">
+            <span>Peso</span>
+            <strong id="peso"></strong>
+        </div>
+
+        <div class="linha">
+            <span>Perna</span>
+            <strong id="perna"></strong>
+        </div>
+
+        <div class="linha">
+            <span>Chuteira</span>
+            <strong id="chuteira"></strong>
+        </div>
+
+        <div class="linha">
+            <span>Instagram</span>
+            <strong id="instagram"></strong>
+        </div>
+
+        <div class="linha">
+            <span>Contato</span>
+            <strong id="contato"></strong>
+        </div>
+
+    </section>
+
+    <!-- SOBRE -->
 
     <section class="extras">
 
-        <h3>Sobre o atleta</h3>
+        <h3>INFORMAÇÕES ADICIONAIS</h3>
 
         <p id="extras"></p>
 
     </section>
 
+    <!-- RODAPÉ -->
+
     <footer class="footer-rpp">
 
-        <img src="Logo Rpp.jpg" class="footer-logo" alt="RPP Soccer">
+        <img
+            src="Logo Rpp.jpg"
+            class="footer-logo"
+            alt="RPP Soccer">
 
         <h3>RPP Soccer</h3>
 
@@ -71,11 +131,10 @@
 
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 <script src="script.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
 </body>
+
 </html>

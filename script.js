@@ -1,112 +1,221 @@
-const p = new URLSearchParams(location.search);
+const p = new URLSearchParams(window.location.search);
 
-const f = (i, k) => {
-    let e = document.getElementById(i),
-        v = p.get(k);
-    if (e && v !== null) e.textContent = v;
-};
+// =======================
+// PREENCHIMENTO DOS CAMPOS
+// =======================
 
-['Nome','Nascimento','Cidade','Posicao','ClubeAtual','ClubesAntigos','Peso','Altura','Perna','Nacionalidade','Chuteira','Extras']
-.forEach(k => f(k.charAt(0).toLowerCase() + k.slice(1).replace('Atual','Atual').replace('Antigos','Antigos'), k));
+function setText(id, param) {
 
-document.getElementById('nome').textContent = p.get('Nome') || '';
-document.getElementById('nascimento').textContent = p.get('Nascimento') || '';
-document.getElementById('cidade').textContent = p.get('Cidade') || '';
-document.getElementById('posicao').textContent = p.get('Posicao') || '';
-document.getElementById('clubeAtual').textContent = p.get('ClubeAtual') || '';
-document.getElementById('clubesAntigos').textContent = p.get('ClubesAntigos') || '';
-document.getElementById('peso').textContent = p.get('Peso') || '';
-document.getElementById('altura').textContent = p.get('Altura') || '';
-document.getElementById('perna').textContent = p.get('Perna') || '';
-document.getElementById('nacionalidade').textContent = p.get('Nacionalidade') || '';
-document.getElementById('chuteira').textContent = p.get('Chuteira') || '';
+    const el = document.getElementById(id);
 
-let i = p.get('Instagram');
-if (i) document.getElementById('instagram').textContent = '@' + i;
+    if (!el) return;
 
-let c = p.get('Contato');
-if (c) document.getElementById('contato').textContent = c;
+    const valor = p.get(param);
 
-let x = p.get('Extras');
-if (x) document.getElementById('extras').textContent = x;
+    el.textContent = valor ? valor.trim() : "";
 
-let foto = p.get('Foto1');
-if (foto) document.getElementById('fotoAtleta').src = foto;
+}
+
+setText("nome", "Nome");
+setText("nascimento", "Nascimento");
+setText("cidade", "Cidade");
+setText("posicao", "Posicao");
+setText("clubeAtual", "ClubeAtual");
+setText("clubesAntigos", "ClubesAntigos");
+setText("peso", "Peso");
+setText("altura", "Altura");
+setText("perna", "Perna");
+setText("nacionalidade", "Nacionalidade");
+setText("chuteira", "Chuteira");
+setText("extras", "Extras");
+
+// =======================
+// INSTAGRAM
+// =======================
+
+const instagram = p.get("Instagram");
+
+const instagramEl = document.getElementById("instagram");
+
+if (instagramEl) {
+
+    if (instagram) {
+
+        instagramEl.textContent = instagram.startsWith("@")
+            ? instagram
+            : "@" + instagram;
+
+    } else {
+
+        instagramEl.textContent = "";
+
+    }
+
+}
+
+// =======================
+// CONTATO
+// =======================
+
+const contatoEl = document.getElementById("contato");
+
+if (contatoEl) {
+
+    contatoEl.textContent = p.get("Contato") || "";
+
+}
+
+// =======================
+// FOTO
+// =======================
+
+const foto = document.getElementById("fotoAtleta");
+
+const fotoURL = p.get("Foto1");
+
+if (foto && fotoURL) {
+
+    foto.src = fotoURL;
+
+    foto.crossOrigin = "anonymous";
+
+}
+
+// =======================
+// BOTÃO
+// =======================
 
 document.addEventListener("DOMContentLoaded", () => {
-    const b = document.getElementById("btnCompartilhar");
-    if (b) b.addEventListener("click", gerarPDF);
+
+    const botao = document.getElementById("btnCompartilhar");
+
+    if (botao) {
+
+        botao.addEventListener("click", gerarPDF);
+
+    }
+
 });
+
+// =======================
+// PDF
+// =======================
 
 async function gerarPDF() {
 
-    const btn = document.getElementById("btnCompartilhar");
-    btn.style.display = "none";
+    const botao = document.getElementById("btnCompartilhar");
 
-    const alvo = document.querySelector(".container");
+    if (botao) botao.style.display = "none";
 
-    // Aguarda a foto carregar
-    const foto = document.getElementById("fotoAtleta");
+    try {
 
-    if (foto && !foto.complete) {
-        await new Promise(resolve => {
-            foto.onload = resolve;
-            foto.onerror = resolve;
-        });
-    }
+        if (foto && !foto.complete) {
 
-    // Aguarda o navegador terminar o layout
-    await new Promise(resolve => setTimeout(resolve, 300));
+            await new Promise(resolve => {
 
-    const canvas = await html2canvas(alvo, {
-        scale: 3,
-        useCORS: true,
-        allowTaint: true,
-        backgroundColor: "#ffffff",
-        scrollX: 0,
-        scrollY: -window.scrollY,
-        windowWidth: document.documentElement.scrollWidth,
-        windowHeight: document.documentElement.scrollHeight
-    });
+                foto.onload = resolve;
+                foto.onerror = resolve;
 
-    btn.style.display = "";
-
-    const { jsPDF } = window.jspdf;
-
-    const pdf = new jsPDF({
-        orientation: "portrait",
-        unit: "mm",
-        format: "a4"
-    });
-
-    const pdfWidth = 210;
-    const pdfHeight = canvas.height * pdfWidth / canvas.width;
-
-    pdf.addImage(
-        canvas.toDataURL("image/png"),
-        "PNG",
-        0,
-        0,
-        pdfWidth,
-        pdfHeight
-    );
-
-    const nome = (p.get("Nome") || "Atleta").trim();
-
-    const blob = pdf.output("blob");
-    const file = new File([blob], `Ficha - ${nome}.pdf`, {
-        type: "application/pdf"
-    });
-
-    if (navigator.canShare && navigator.canShare({ files: [file] })) {
-        try {
-            await navigator.share({
-                files: [file],
-                title: file.name
             });
-            return;
-        } catch (e) {}
+
+        }
+
+        await new Promise(resolve => setTimeout(resolve, 300));
+
+        const nome = (p.get("Nome") || "Atleta").trim();
+
+        const elemento = document.querySelector(".pagina");
+
+        const options = {
+
+            margin: 0,
+
+            filename: `Ficha - ${nome}.pdf`,
+
+            image: {
+
+                type: "jpeg",
+                quality: 1
+
+            },
+
+            html2canvas: {
+
+                scale: 4,
+                useCORS: true,
+                allowTaint: false,
+                backgroundColor: "#111111",
+                scrollX: 0,
+                scrollY: 0
+
+            },
+
+            pagebreak: {
+
+                mode: ["avoid-all", "css"]
+
+            },
+
+            jsPDF: {
+
+                unit: "mm",
+                format: "a4",
+                orientation: "portrait",
+                compress: true
+
+            }
+
+        };
+
+        const worker = html2pdf()
+            .set(options)
+            .from(elemento);
+
+        const blob = await worker.outputPdf("blob");
+
+        const arquivo = new File(
+            [blob],
+            `Ficha - ${nome}.pdf`,
+            { type: "application/pdf" }
+        );
+
+        if (navigator.canShare?.({ files: [arquivo] })) {
+
+            try {
+
+                await navigator.share({
+
+                    files: [arquivo],
+                    title: arquivo.name
+
+                });
+
+            } catch {
+
+                await html2pdf()
+                    .set(options)
+                    .from(elemento)
+                    .save();
+
+            }
+
+        } else {
+
+            await html2pdf()
+                .set(options)
+                .from(elemento)
+                .save();
+
+        }
+
+    } catch (erro) {
+
+        console.error(erro);
+
+    } finally {
+
+        if (botao) botao.style.display = "";
+
     }
 
-    pdf.save(file.name);
 }

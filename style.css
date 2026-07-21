@@ -1,164 +1,13 @@
-body{
+*{
     margin:0;
-    background:#efefef;
-    font-family:Arial,sans-serif;
-}
-
-/* ========================= */
-/* FOLHA */
-/* ========================= */
-
-.card{
-    width:210mm;
-    min-height:297mm;
-
-    margin:20px auto;
-
-    background:#fff;
-
-    border-radius:14px;
-
-    padding:20px;
-
+    padding:0;
     box-sizing:border-box;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.15);
-
-    display:flex;
-    flex-direction:column;
 }
 
-/* ========================= */
-/* CABEÇALHO */
-/* ========================= */
+body{
 
-header{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-top:8px;
-}
-
-header img.footer-logo{
-    display:none;
-}
-
-/* ========================= */
-/* FOTO */
-/* ========================= */
-
-.foto{
-
-    width:125px;
-    aspect-ratio:2/3;
-
-    object-fit:cover;
-
-    border-radius:12px;
-
-    border:5px solid #e46b00;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.18);
-
-}
-
-/* ========================= */
-/* TÍTULOS */
-/* ========================= */
-
-h1{
-
-    text-align:center;
-
-    margin:14px 0 4px;
-
-    font-size:30px;
-
-    color:#222;
-
-}
-
-h2{
-
-    text-align:center;
-
-    margin:0 0 18px;
-
-    font-size:15px;
-
-    color:#666;
-
-}
-
-/* ========================= */
-/* GRID */
-/* ========================= */
-
-.grid{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:10px;
-
-}
-
-.grid div{
-
-    background:#fafafa;
-
-    border-left:5px solid #f07a00;
-
-    border-radius:8px;
-
-    padding:8px 10px;
-
-    box-shadow:0 2px 6px rgba(0,0,0,.05);
-
-}
-
-span{
-
-    display:block;
-
-    font-size:11px;
-
-    color:#777;
-
-}
-
-strong{
-
-    font-size:15px;
-
-    color:#222;
-
-}
-
-/* ========================= */
-/* SOBRE */
-/* ========================= */
-
-.extras{
-
-    margin-top:16px;
-
-    border-top:2px solid #f07a00;
-
-    padding-top:12px;
-
-}
-
-.extras h3{
-
-    color:#f07a00;
-
-    margin-bottom:8px;
-
-    padding-bottom:6px;
-
-    border-bottom:2px solid #f07a00;
+    background:#111;
+    font-family:Arial,Helvetica,sans-serif;
 
 }
 
@@ -169,24 +18,230 @@ strong{
 #btnCompartilhar{
 
     position:fixed;
+    top:18px;
+    right:18px;
 
-    top:15px;
-
-    right:15px;
-
-    padding:8px 14px;
-
-    background:#e46b00;
-
-    color:#fff;
+    padding:10px 18px;
 
     border:none;
 
-    border-radius:6px;
+    background:#ef7d1a;
+
+    color:#fff;
+
+    border-radius:8px;
 
     cursor:pointer;
 
+    font-weight:bold;
+
     z-index:9999;
+
+}
+
+/* ========================= */
+/* FOLHA */
+/* ========================= */
+
+.card{
+
+    width:210mm;
+    min-height:297mm;
+
+    margin:20px auto;
+
+    background:#181818;
+
+    color:#fff;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:0;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.35);
+
+}
+
+/* ========================= */
+/* TOPO */
+/* ========================= */
+
+.topo{
+
+    background:#ef7d1a;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:18px;
+
+}
+
+.logo-topo{
+
+    width:210px;
+
+    height:auto;
+
+}
+
+/* ========================= */
+/* CABEÇALHO */
+/* ========================= */
+
+.cabecalho{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:28px;
+
+    padding:35px;
+
+}
+
+/* FOTO */
+
+.foto-atleta{
+
+    width:170px;
+
+    aspect-ratio:2/3;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    border:4px solid #ef7d1a;
+
+    flex-shrink:0;
+
+}
+
+/* DADOS */
+
+.dados-principais{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    min-height:255px;
+
+}
+
+#nome{
+
+    font-size:34px;
+
+    color:#fff;
+
+    margin-bottom:15px;
+
+    line-height:1.1;
+
+}
+
+#nascimento{
+
+    color:#cfcfcf;
+
+    font-size:18px;
+
+    margin-bottom:10px;
+
+}
+
+#clubeAtual{
+
+    color:#ef7d1a;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+/* ========================= */
+/* INFORMAÇÕES */
+/* ========================= */
+
+.informacoes{
+
+    padding:0 35px;
+
+}
+
+.linha{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+}
+
+.linha span{
+
+    color:#c8c8c8;
+
+    font-size:15px;
+
+}
+
+.linha strong{
+
+    color:#fff;
+
+    font-size:16px;
+
+    text-align:right;
+
+    max-width:58%;
+
+}
+
+/* ========================= */
+/* EXTRAS */
+/* ========================= */
+
+.extras{
+
+    margin-top:35px;
+
+    padding:0 35px;
+
+}
+
+.extras h3{
+
+    color:#ef7d1a;
+
+    font-size:22px;
+
+    margin-bottom:14px;
+
+}
+
+#extras{
+
+    color:#e5e5e5;
+
+    line-height:1.7;
+
+    text-align:justify;
 
 }
 
@@ -198,42 +253,42 @@ strong{
 
     margin-top:auto;
 
-    padding-top:18px;
+    padding:35px;
+
+    border-top:2px solid #ef7d1a;
 
     text-align:center;
-
-    border-top:2px solid #f07a00;
 
 }
 
 .footer-logo{
 
-    width:120px;
+    width:140px;
 
-    height:auto;
+    margin:0 auto 14px;
 
     display:block;
-
-    margin:0 auto 8px;
 
 }
 
 .footer-rpp h3{
 
-    color:#f07a00;
+    color:#ef7d1a;
 
-    margin:6px 0;
+    margin-bottom:8px;
 
 }
 
 .footer-rpp p{
 
-    margin:3px 0;
+    margin:4px 0;
+
+    color:#d9d9d9;
 
 }
 
 /* ========================= */
-/* IMPRESSÃO */
+/* PDF */
 /* ========================= */
 
 @page{
@@ -248,9 +303,7 @@ strong{
 
     body{
 
-        margin:0;
-
-        background:#fff;
+        background:#181818;
 
     }
 
@@ -268,15 +321,7 @@ strong{
 
         margin:0;
 
-        padding:18px;
-
         box-shadow:none;
-
-        border-radius:0;
-
-        page-break-inside:avoid;
-
-        break-inside:avoid;
 
     }
 
