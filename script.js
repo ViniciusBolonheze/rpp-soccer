@@ -27,7 +27,15 @@ setText("altura", "Altura");
 setText("perna", "Perna");
 setText("nacionalidade", "Nacionalidade");
 setText("chuteira", "Chuteira");
-setText("extras", "Extras");
+const extrasEl = document.getElementById("extras");
+
+if (extrasEl) {
+
+    const extras = p.get("Extras");
+
+    extrasEl.innerHTML = extras ? extras.trim() : "";
+
+}
 
 // =======================
 // INSTAGRAM
