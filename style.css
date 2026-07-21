@@ -12,3 +12,28 @@ span{display:block;font-size:12px;color:#777}
 strong{font-size:16px;color:#222}
 .extras{margin-top:30px;border-top:2px solid #e46b00;padding-top:20px}
 #btnCompartilhar{position:fixed;top:15px;right:15px;padding:8px 14px;background:#e46b00;color:#fff;border:none;border-radius:6px;cursor:pointer;z-index:9999}
+
+
+/* V3 adjustments */
+.header img:first-child{display:none!important;}
+.profile,.foto-container,.photo-container,.athlete-photo{display:flex;justify-content:center;}
+.profile img,.foto-container img,.photo-container img,.athlete-photo img{
+display:block;
+margin:0 auto 15px auto!important;
+}
+.footer-rpp{
+margin-top:40px;
+padding:25px 0;
+text-align:center;
+border-top:2px solid #f07a00;
+}
+.footer-logo{
+width:120px;
+height:auto;
+display:block;
+margin:0 auto 10px;
+}
+.footer-rpp h3{
+margin:6px 0;
+color:#f07a00;
+}
