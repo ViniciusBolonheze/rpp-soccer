@@ -209,8 +209,6 @@ body{
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
 
     padding:10px 0;
@@ -221,9 +219,12 @@ body{
 
 .linha span{
 
+    width:42%;
     color:#c8c8c8;
 
     font-size:11px;
+
+    flex-shrink:0;
 
 }
 
@@ -233,9 +234,11 @@ body{
 
     font-size:12px;
 
-    text-align:right;
+    font-weight:600;
 
-    max-width:58%;
+    text-align:left;
+
+    flex:1;
 
 }
 
