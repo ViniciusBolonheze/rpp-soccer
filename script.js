@@ -17,4 +17,26 @@ let c=p.get('Contato');if(c)document.getElementById('contato').textContent=c;
 let x=p.get('Extras');if(x)document.getElementById('extras').textContent=x;
 let foto=p.get('Foto1');if(foto)document.getElementById('fotoAtleta').src=foto;
 
-document.getElementById('btnCompartilhar').addEventListener('click',()=>alert('Botão funcionando. Próximo passo: implementar PDF.'));
+document.addEventListener("DOMContentLoaded",()=>{
+ const b=document.getElementById("btnCompartilhar");
+ if(b) b.addEventListener("click",gerarPDF);
+});
+
+async function gerarPDF(){
+ const btn=document.getElementById("btnCompartilhar");
+ btn.style.visibility="hidden";
+ const alvo=document.querySelector(".container")||document.body;
+ const canvas=await html2canvas(alvo,{scale:2});
+ btn.style.visibility="visible";
+ const {jsPDF}=window.jspdf;
+ const pdf=new jsPDF("p","mm","a4");
+ const w=190,h=canvas.height*w/canvas.width;
+ pdf.addImage(canvas.toDataURL("image/png"),"PNG",10,10,w,h);
+ const nome=(new URLSearchParams(location.search).get("Nome")||"Atleta").trim();
+ const blob=pdf.output("blob");
+ const file=new File([blob],`Ficha - ${nome}.pdf`,{type:"application/pdf"});
+ if(navigator.canShare && navigator.canShare({files:[file]})){
+   try{await navigator.share({files:[file],title:file.name});return;}catch(e){}
+ }
+ pdf.save(file.name);
+}
