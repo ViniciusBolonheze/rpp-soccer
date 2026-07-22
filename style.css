@@ -157,35 +157,78 @@ body{
 
 }
 
-/* NOVO LAYOUT */
+/* CABEÇALHO */
 
 .cabecalho-info{
 
     display:grid;
 
-    grid-template-columns:1fr 230px;
+    grid-template-columns:1fr 250px;
 
-    align-items:start;
+    grid-template-areas:
+        "nome nome"
+        "nascimento whatsapp"
+        "clube instagram";
 
     column-gap:20px;
 
-}
+    row-gap:4px;
 
-.dados-esquerda{
-
-    min-width:0;
+    align-items: flex-start;
 
 }
 
-.dados-direita{
+#nome{
 
-    display:flex;
+    grid-area:nome;
 
-    flex-direction:column;
+    font-size:24px;
 
-    gap:12px;
+    color:#fff;
 
-    align-items:flex-start;
+    line-height:1.1;
+
+    margin-bottom:10px;
+
+}
+
+#nascimento{
+
+    grid-area:nascimento;
+
+}
+
+#clubeAtual{
+
+    grid-area:clube;
+
+    color:#ef7d1a;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+}
+
+.cabecalho-texto{
+
+    color:#cfcfcf;
+
+    font-size:13px;
+
+    line-height:1.4;
+
+}
+
+.contato-whatsapp{
+
+    grid-area:whatsapp;
+
+}
+
+.contato-instagram{
+
+    grid-area:instagram;
 
 }
 
@@ -215,43 +258,11 @@ body{
 
     color:#ffffff;
 
-    font-size:14px;
-
-    font-weight:bold;
-
-    line-height:1.2;
-
-}
-
-#nome{
-
-    font-size:24px;
-
-    color:#fff;
-
-    margin-bottom:15px;
-
-    line-height:1.1;
-
-}
-
-.cabecalho-texto{
-
-    color:#cfcfcf;
-
     font-size:13px;
 
-    margin-bottom:5px;
+    font-weight:700;
 
-}
-
-#clubeAtual{
-
-    color:#ef7d1a;
-
-    font-size:16px;
-
-    font-weight:bold;
+    line-height:1.2;
 
 }
 
