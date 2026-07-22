@@ -393,6 +393,45 @@ body{
     color:#d9d9d9;
 
 }
+.footer-contato{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:28px;
+
+    margin-top:8px;
+
+    flex-wrap:wrap;
+
+}
+
+.footer-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    color:#d9d9d9;
+
+    font-size:12px;
+
+}
+
+.footer-icone{
+
+    width:28px;
+
+    height:28px;
+
+    object-fit:contain;
+
+}
 
 /* ========================= */
 /* PDF */
