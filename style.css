@@ -22,8 +22,6 @@ body{
 
     width:100%;
 
-    
-
     background:#111111;
 
     display:flex;
@@ -153,13 +151,75 @@ body{
 
 .dados-principais{
 
+    flex:1;
+
+    margin-top:60px;
+
+}
+
+/* NOVO LAYOUT */
+
+.cabecalho-info{
+
+    display:grid;
+
+    grid-template-columns:1fr 230px;
+
+    align-items:start;
+
+    column-gap:20px;
+
+}
+
+.dados-esquerda{
+
+    min-width:0;
+
+}
+
+.dados-direita{
+
     display:flex;
 
     flex-direction:column;
 
-    justify-content:flex-start;
+    gap:12px;
 
-    margin-top:60px;
+    align-items:flex-start;
+
+}
+
+.contato-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.icone-social{
+
+    width:24px;
+
+    height:24px;
+
+    object-fit:contain;
+
+    flex-shrink:0;
+
+}
+
+.contato-item strong{
+
+    color:#ffffff;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    line-height:1.2;
 
 }
 
@@ -175,7 +235,7 @@ body{
 
 }
 
-#nascimento{
+.cabecalho-texto{
 
     color:#cfcfcf;
 
@@ -220,6 +280,7 @@ body{
 .linha span{
 
     width:42%;
+
     color:#c8c8c8;
 
     font-size:11px;

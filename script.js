@@ -27,6 +27,11 @@ setText("altura", "Altura");
 setText("perna", "Perna");
 setText("nacionalidade", "Nacionalidade");
 setText("chuteira", "Chuteira");
+
+// =======================
+// INFORMAÇÕES ADICIONAIS
+// =======================
+
 const extrasEl = document.getElementById("extras");
 
 if (extrasEl) {
@@ -44,20 +49,27 @@ if (extrasEl) {
 const instagram = p.get("Instagram");
 
 const instagramEl = document.getElementById("instagram");
+const instagramTopoEl = document.getElementById("instagramTopo");
+
+let instagramTexto = "";
+
+if (instagram) {
+
+    instagramTexto = instagram.startsWith("@")
+        ? instagram
+        : "@" + instagram;
+
+}
 
 if (instagramEl) {
 
-    if (instagram) {
+    instagramEl.textContent = instagramTexto;
 
-        instagramEl.textContent = instagram.startsWith("@")
-            ? instagram
-            : "@" + instagram;
+}
 
-    } else {
+if (instagramTopoEl) {
 
-        instagramEl.textContent = "";
-
-    }
+    instagramTopoEl.textContent = instagramTexto;
 
 }
 
@@ -65,11 +77,20 @@ if (instagramEl) {
 // CONTATO
 // =======================
 
+const contato = p.get("Contato") || "";
+
 const contatoEl = document.getElementById("contato");
+const contatoTopoEl = document.getElementById("contatoTopo");
 
 if (contatoEl) {
 
-    contatoEl.textContent = p.get("Contato") || "";
+    contatoEl.textContent = contato;
+
+}
+
+if (contatoTopoEl) {
+
+    contatoTopoEl.textContent = contato;
 
 }
 
@@ -170,7 +191,6 @@ async function gerarPDF() {
                 format: "a4",
                 orientation: "portrait",
                 compress: true
-                
 
             }
 
